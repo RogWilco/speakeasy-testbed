@@ -1,0 +1,13 @@
+name: Main Workflow
+jobs:
+  generate-ts-sdk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate Typescript SDK
+        uses: speakeasy-api/sdk-generation-action@v15
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }}
+          force: true
+          mode: direct
+          action: run-workflow
