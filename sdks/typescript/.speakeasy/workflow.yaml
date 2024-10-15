@@ -1,12 +1,12 @@
 workflowVersion: 1.0.0
 speakeasyVersion: latest
 sources:
-    speakeasy-testbed-petstore-OAS:
+    PetStore-OAS:
         inputs:
             - location: ../../openapi/petstore.yaml
         registry:
-            location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/speakeasy-testbed-petstore-oas
+            location: registry.speakeasyapi.dev/speakeasy-self/nick-test/pet-store-oas
 targets:
-    speakeasy-testbed-petstore:
+    pet-store:
         target: typescript
-        source: speakeasy-testbed-petstore-OAS
+        source: PetStore-OAS

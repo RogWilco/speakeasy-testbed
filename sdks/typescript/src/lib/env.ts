@@ -7,11 +7,11 @@ import { dlv } from "./dlv.js";
 import * as z from "zod";
 
 export interface Env {
-  SPEAKEASYTESTBEDPETSTORE_DEBUG?: boolean | undefined;
+  PETSTORE_DEBUG?: boolean | undefined;
 }
 
 export const envSchema: z.ZodType<Env, z.ZodTypeDef, unknown> = z.object({
-  SPEAKEASYTESTBEDPETSTORE_DEBUG: z.coerce.boolean(),
+  PETSTORE_DEBUG: z.coerce.boolean(),
 })
   .partial();
 

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
-id: ccfacc7f-ec00-4176-b9ec-5823d8fdbcfa
+id: 46bb18df-8b84-4b79-8c5b-4bd662d8d114
 management:
   docChecksum: 1bdb7a6f8bf3995d4b40475228403253
   docVersion: 1.0.0
-  speakeasyVersion: 1.406.0
-  generationVersion: 2.429.0
+  speakeasyVersion: 1.418.4
+  generationVersion: 2.438.3
   releaseVersion: 0.0.1
-  configChecksum: f4491b0c2e21551610f072bdb83401f1
+  configChecksum: 5703f95661fb68748b577586f8e546c2
 features:
   typescript:
     additionalDependencies: 0.1.0
@@ -39,7 +39,7 @@ generatedFiles:
   - docs/models/operations/showpetbyidrequest.md
   - docs/models/operations/showpetbyidresponse.md
   - docs/sdks/pets/README.md
-  - docs/sdks/speakeasytestbedpetstore/README.md
+  - docs/sdks/petstore/README.md
   - jsr.json
   - package.json
   - src/core.ts

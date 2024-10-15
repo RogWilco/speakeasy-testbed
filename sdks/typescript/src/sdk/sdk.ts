@@ -5,7 +5,7 @@
 import { ClientSDK } from "../lib/sdks.js";
 import { Pets } from "./pets.js";
 
-export class SpeakeasyTestbedPetstore extends ClientSDK {
+export class PetStore extends ClientSDK {
   private _pets?: Pets;
   get pets(): Pets {
     return (this._pets ??= new Pets(this._options));

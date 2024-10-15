@@ -1,9 +1,9 @@
-# @rogwilco/speakeasy-testbed-petstore
+# @rogwilco/pet-store
 
-Developer-friendly & type-safe Typescript SDK specifically catered to leverage *@rogwilco/speakeasy-testbed-petstore* API.
+Developer-friendly & type-safe Typescript SDK specifically catered to leverage *@rogwilco/pet-store* API.
 
 <div align="left">
-    <a href="https://www.speakeasy.com/?utm_source=@rogwilco/speakeasy-testbed-petstore&utm_campaign=typescript"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>
+    <a href="https://www.speakeasy.com/?utm_source=@rogwilco/pet-store&utm_campaign=typescript"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>
     <a href="https://opensource.org/licenses/MIT">
         <img src="https://img.shields.io/badge/License-MIT-blue.svg" style="width: 100px; height: 28px;" />
     </a>
@@ -12,7 +12,7 @@ Developer-friendly & type-safe Typescript SDK specifically catered to leverage *
 
 <br /><br />
 > [!IMPORTANT]
-> This SDK is not yet ready for production use. To complete setup please follow the steps outlined in your [workspace](https://app.speakeasy.com/org/speakeasy-self/speakeasy-self). Delete this section before > publishing to a package manager.
+> This SDK is not yet ready for production use. To complete setup please follow the steps outlined in your [workspace](https://app.speakeasy.com/org/speakeasy-self/nick-test). Delete this section before > publishing to a package manager.
 
 <!-- Start Summary [summary] -->
 ## Summary
@@ -80,12 +80,12 @@ For supported JavaScript runtimes, please consult [RUNTIMES.md](RUNTIMES.md).
 ### Example
 
 ```typescript
-import { SpeakeasyTestbedPetstore } from "@rogwilco/speakeasy-testbed-petstore";
+import { PetStore } from "@rogwilco/pet-store";
 
-const speakeasyTestbedPetstore = new SpeakeasyTestbedPetstore();
+const petStore = new PetStore();
 
 async function run() {
-  const result = await speakeasyTestbedPetstore.pets.listPets({});
+  const result = await petStore.pets.listPets({});
 
   // Handle the result
   console.log(result);
@@ -127,10 +127,9 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
-- [petsCreatePets](docs/sdks/pets/README.md#createpets)
-- [petsListPets](docs/sdks/pets/README.md#listpets)
-- [petsShowPetById](docs/sdks/pets/README.md#showpetbyid)
-
+- [`petsCreatePets`](docs/sdks/pets/README.md#createpets) - Create a pet
+- [`petsListPets`](docs/sdks/pets/README.md#listpets) - List all pets
+- [`petsShowPetById`](docs/sdks/pets/README.md#showpetbyid) - Info for a specific pet
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->
@@ -142,12 +141,12 @@ Some of the endpoints in this SDK support retries.  If you use the SDK without a
 
 To change the default retry strategy for a single API call, simply provide a retryConfig object to the call:
 ```typescript
-import { SpeakeasyTestbedPetstore } from "@rogwilco/speakeasy-testbed-petstore";
+import { PetStore } from "@rogwilco/pet-store";
 
-const speakeasyTestbedPetstore = new SpeakeasyTestbedPetstore();
+const petStore = new PetStore();
 
 async function run() {
-  const result = await speakeasyTestbedPetstore.pets.listPets({}, {
+  const result = await petStore.pets.listPets({}, {
     retries: {
       strategy: "backoff",
       backoff: {
@@ -170,9 +169,9 @@ run();
 
 If you'd like to override the default retry strategy for all operations that support retries, you can provide a retryConfig at SDK initialization:
 ```typescript
-import { SpeakeasyTestbedPetstore } from "@rogwilco/speakeasy-testbed-petstore";
+import { PetStore } from "@rogwilco/pet-store";
 
-const speakeasyTestbedPetstore = new SpeakeasyTestbedPetstore({
+const petStore = new PetStore({
   retryConfig: {
     strategy: "backoff",
     backoff: {
@@ -186,7 +185,7 @@ const speakeasyTestbedPetstore = new SpeakeasyTestbedPetstore({
 });
 
 async function run() {
-  const result = await speakeasyTestbedPetstore.pets.listPets({});
+  const result = await petStore.pets.listPets({});
 
   // Handle the result
   console.log(result);
@@ -219,15 +218,15 @@ In addition, when custom error responses are specified for an operation, the SDK
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ```typescript
-import { SpeakeasyTestbedPetstore } from "@rogwilco/speakeasy-testbed-petstore";
-import { SDKValidationError } from "@rogwilco/speakeasy-testbed-petstore/models/errors";
+import { PetStore } from "@rogwilco/pet-store";
+import { SDKValidationError } from "@rogwilco/pet-store/models/errors";
 
-const speakeasyTestbedPetstore = new SpeakeasyTestbedPetstore();
+const petStore = new PetStore();
 
 async function run() {
   let result;
   try {
-    result = await speakeasyTestbedPetstore.pets.listPets({});
+    result = await petStore.pets.listPets({});
 
     // Handle the result
     console.log(result);
@@ -266,14 +265,14 @@ You can override the default server globally by passing a server index to the `s
 | 0 | `http://petstore.swagger.io/v1` | None |
 
 ```typescript
-import { SpeakeasyTestbedPetstore } from "@rogwilco/speakeasy-testbed-petstore";
+import { PetStore } from "@rogwilco/pet-store";
 
-const speakeasyTestbedPetstore = new SpeakeasyTestbedPetstore({
+const petStore = new PetStore({
   serverIdx: 0,
 });
 
 async function run() {
-  const result = await speakeasyTestbedPetstore.pets.listPets({});
+  const result = await petStore.pets.listPets({});
 
   // Handle the result
   console.log(result);
@@ -289,14 +288,14 @@ run();
 The default server can also be overridden globally by passing a URL to the `serverURL` optional parameter when initializing the SDK client instance. For example:
 
 ```typescript
-import { SpeakeasyTestbedPetstore } from "@rogwilco/speakeasy-testbed-petstore";
+import { PetStore } from "@rogwilco/pet-store";
 
-const speakeasyTestbedPetstore = new SpeakeasyTestbedPetstore({
+const petStore = new PetStore({
   serverURL: "http://petstore.swagger.io/v1",
 });
 
 async function run() {
-  const result = await speakeasyTestbedPetstore.pets.listPets({});
+  const result = await petStore.pets.listPets({});
 
   // Handle the result
   console.log(result);
@@ -325,8 +324,8 @@ custom header and a timeout to requests and how to use the `"requestError"` hook
 to log errors:
 
 ```typescript
-import { SpeakeasyTestbedPetstore } from "@rogwilco/speakeasy-testbed-petstore";
-import { HTTPClient } from "@rogwilco/speakeasy-testbed-petstore/lib/http";
+import { PetStore } from "@rogwilco/pet-store";
+import { HTTPClient } from "@rogwilco/pet-store/lib/http";
 
 const httpClient = new HTTPClient({
   // fetcher takes a function that has the same signature as native `fetch`.
@@ -352,7 +351,7 @@ httpClient.addHook("requestError", (error, request) => {
   console.groupEnd();
 });
 
-const sdk = new SpeakeasyTestbedPetstore({ httpClient });
+const sdk = new PetStore({ httpClient });
 ```
 <!-- End Custom HTTP Client [http-client] -->
 
@@ -367,12 +366,12 @@ You can pass a logger that matches `console`'s interface as an SDK option.
 > Beware that debug logging will reveal secrets, like API tokens in headers, in log messages printed to a console or files. It's recommended to use this feature only during local development and not in production.
 
 ```typescript
-import { SpeakeasyTestbedPetstore } from "@rogwilco/speakeasy-testbed-petstore";
+import { PetStore } from "@rogwilco/pet-store";
 
-const sdk = new SpeakeasyTestbedPetstore({ debugLogger: console });
+const sdk = new PetStore({ debugLogger: console });
 ```
 
-You can also enable a default debug logger by setting an environment variable `SPEAKEASYTESTBEDPETSTORE_DEBUG` to true.
+You can also enable a default debug logger by setting an environment variable `PETSTORE_DEBUG` to true.
 <!-- End Debugging [debug] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
@@ -390,4 +389,4 @@ looking for the latest version.
 While we value open-source contributions to this SDK, this library is generated programmatically. Any manual changes added to internal files will be overwritten on the next generation. 
 We look forward to hearing your feedback. Feel free to open a PR or an issue with a proof of concept and we'll do our best to include it in a future release. 
 
-### SDK Created by [Speakeasy](https://www.speakeasy.com/?utm_source=@rogwilco/speakeasy-testbed-petstore&utm_campaign=typescript)
+### SDK Created by [Speakeasy](https://www.speakeasy.com/?utm_source=@rogwilco/pet-store&utm_campaign=typescript)

@@ -1,27 +1,27 @@
 speakeasyVersion: 1.418.4
 sources:
-    speakeasy-testbed-petstore-OAS:
-        sourceNamespace: speakeasy-testbed-petstore-oas
-        sourceRevisionDigest: sha256:6aff3d3b9b1ee7bab51d0a1482c49688d07abb8a2d9abffad9007a2f22299705
-        sourceBlobDigest: sha256:ad0bbdc74cdf96722afdba9e91c3b6198b2b82cb3b889b99dd48ef30a92da77c
+    PetStore-OAS:
+        sourceNamespace: pet-store-oas
+        sourceRevisionDigest: sha256:e9e82c24ef41ccb23a7853bca1b8670f4a21b2c9b289b3dd4828e5e3787ce371
+        sourceBlobDigest: sha256:39553e4f051054755ccecf271a43f2e94aba86933d8a5e2ac489b9626059430a
         tags:
             - latest
 targets:
-    speakeasy-testbed-petstore:
-        source: speakeasy-testbed-petstore-OAS
-        sourceNamespace: speakeasy-testbed-petstore-oas
-        sourceRevisionDigest: sha256:6aff3d3b9b1ee7bab51d0a1482c49688d07abb8a2d9abffad9007a2f22299705
-        sourceBlobDigest: sha256:ad0bbdc74cdf96722afdba9e91c3b6198b2b82cb3b889b99dd48ef30a92da77c
+    pet-store:
+        source: PetStore-OAS
+        sourceNamespace: pet-store-oas
+        sourceRevisionDigest: sha256:e9e82c24ef41ccb23a7853bca1b8670f4a21b2c9b289b3dd4828e5e3787ce371
+        sourceBlobDigest: sha256:39553e4f051054755ccecf271a43f2e94aba86933d8a5e2ac489b9626059430a
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
-        speakeasy-testbed-petstore-OAS:
+        PetStore-OAS:
             inputs:
                 - location: ../../openapi/petstore.yaml
             registry:
-                location: registry.speakeasyapi.dev/speakeasy-self/speakeasy-self/speakeasy-testbed-petstore-oas
+                location: registry.speakeasyapi.dev/speakeasy-self/nick-test/pet-store-oas
     targets:
-        speakeasy-testbed-petstore:
+        pet-store:
             target: typescript
-            source: speakeasy-testbed-petstore-OAS
+            source: PetStore-OAS

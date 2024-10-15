@@ -16,12 +16,12 @@ List all pets
 ### Example Usage
 
 ```typescript
-import { SpeakeasyTestbedPetstore } from "@rogwilco/speakeasy-testbed-petstore";
+import { PetStore } from "@rogwilco/pet-store";
 
-const speakeasyTestbedPetstore = new SpeakeasyTestbedPetstore();
+const petStore = new PetStore();
 
 async function run() {
-  const result = await speakeasyTestbedPetstore.pets.listPets({});
+  const result = await petStore.pets.listPets({});
 
   // Handle the result
   console.log(result);
@@ -35,15 +35,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SpeakeasyTestbedPetstoreCore } from "@rogwilco/speakeasy-testbed-petstore/core.js";
-import { petsListPets } from "@rogwilco/speakeasy-testbed-petstore/funcs/petsListPets.js";
+import { PetStoreCore } from "@rogwilco/pet-store/core.js";
+import { petsListPets } from "@rogwilco/pet-store/funcs/petsListPets.js";
 
-// Use `SpeakeasyTestbedPetstoreCore` for best tree-shaking performance.
+// Use `PetStoreCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const speakeasyTestbedPetstore = new SpeakeasyTestbedPetstoreCore();
+const petStore = new PetStoreCore();
 
 async function run() {
-  const res = await petsListPets(speakeasyTestbedPetstore, {});
+  const res = await petsListPets(petStore, {});
 
   if (!res.ok) {
     throw res.error;
@@ -84,12 +84,12 @@ Create a pet
 ### Example Usage
 
 ```typescript
-import { SpeakeasyTestbedPetstore } from "@rogwilco/speakeasy-testbed-petstore";
+import { PetStore } from "@rogwilco/pet-store";
 
-const speakeasyTestbedPetstore = new SpeakeasyTestbedPetstore();
+const petStore = new PetStore();
 
 async function run() {
-  const result = await speakeasyTestbedPetstore.pets.createPets({
+  const result = await petStore.pets.createPets({
     id: 596804,
     name: "<value>",
   });
@@ -106,15 +106,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SpeakeasyTestbedPetstoreCore } from "@rogwilco/speakeasy-testbed-petstore/core.js";
-import { petsCreatePets } from "@rogwilco/speakeasy-testbed-petstore/funcs/petsCreatePets.js";
+import { PetStoreCore } from "@rogwilco/pet-store/core.js";
+import { petsCreatePets } from "@rogwilco/pet-store/funcs/petsCreatePets.js";
 
-// Use `SpeakeasyTestbedPetstoreCore` for best tree-shaking performance.
+// Use `PetStoreCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const speakeasyTestbedPetstore = new SpeakeasyTestbedPetstoreCore();
+const petStore = new PetStoreCore();
 
 async function run() {
-  const res = await petsCreatePets(speakeasyTestbedPetstore, {
+  const res = await petsCreatePets(petStore, {
     id: 596804,
     name: "<value>",
   });
@@ -158,12 +158,12 @@ Info for a specific pet
 ### Example Usage
 
 ```typescript
-import { SpeakeasyTestbedPetstore } from "@rogwilco/speakeasy-testbed-petstore";
+import { PetStore } from "@rogwilco/pet-store";
 
-const speakeasyTestbedPetstore = new SpeakeasyTestbedPetstore();
+const petStore = new PetStore();
 
 async function run() {
-  const result = await speakeasyTestbedPetstore.pets.showPetById({
+  const result = await petStore.pets.showPetById({
     petId: "<id>",
   });
 
@@ -179,15 +179,15 @@ run();
 The standalone function version of this method:
 
 ```typescript
-import { SpeakeasyTestbedPetstoreCore } from "@rogwilco/speakeasy-testbed-petstore/core.js";
-import { petsShowPetById } from "@rogwilco/speakeasy-testbed-petstore/funcs/petsShowPetById.js";
+import { PetStoreCore } from "@rogwilco/pet-store/core.js";
+import { petsShowPetById } from "@rogwilco/pet-store/funcs/petsShowPetById.js";
 
-// Use `SpeakeasyTestbedPetstoreCore` for best tree-shaking performance.
+// Use `PetStoreCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const speakeasyTestbedPetstore = new SpeakeasyTestbedPetstoreCore();
+const petStore = new PetStoreCore();
 
 async function run() {
-  const res = await petsShowPetById(speakeasyTestbedPetstore, {
+  const res = await petsShowPetById(petStore, {
     petId: "<id>",
   });
 

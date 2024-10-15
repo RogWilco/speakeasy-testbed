@@ -19,16 +19,16 @@ specific category of applications.
 ## Example
 
 ```typescript
-import { SpeakeasyTestbedPetstoreCore } from "@rogwilco/speakeasy-testbed-petstore/core.js";
-import { petsListPets } from "@rogwilco/speakeasy-testbed-petstore/funcs/petsListPets.js";
-import { SDKValidationError } from "@rogwilco/speakeasy-testbed-petstore/models/errors/sdkvalidationerror.js";
+import { PetStoreCore } from "@rogwilco/pet-store/core.js";
+import { petsListPets } from "@rogwilco/pet-store/funcs/petsListPets.js";
+import { SDKValidationError } from "@rogwilco/pet-store/models/errors/sdkvalidationerror.js";
 
-// Use `SpeakeasyTestbedPetstoreCore` for best tree-shaking performance.
+// Use `PetStoreCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const speakeasyTestbedPetstore = new SpeakeasyTestbedPetstoreCore();
+const petStore = new PetStoreCore();
 
 async function run() {
-  const res = await petsListPets(speakeasyTestbedPetstore, {});
+  const res = await petsListPets(petStore, {});
 
   switch (true) {
     case res.ok:

@@ -3,7 +3,7 @@ generation:
   devContainers:
     enabled: true
     schemaPath: ./openapi/petstore.yaml
-  sdkClassName: SpeakeasyTestbedPetstore
+  sdkClassName: PetStore
   maintainOpenAPIOrder: true
   usageSnippets:
     optionalPropertyRendering: withExample
@@ -24,7 +24,7 @@ typescript:
   author: Speakeasy
   clientServerStatusCodesAsErrors: true
   enumFormat: union
-  envVarPrefix: SPEAKEASYTESTBEDPETSTORE
+  envVarPrefix: PETSTORE
   flattenGlobalSecurity: true
   flatteningOrder: parameters-first
   imports:
@@ -40,7 +40,7 @@ typescript:
   methodArguments: require-security-and-request
   moduleFormat: commonjs
   outputModelSuffix: output
-  packageName: '@rogwilco/speakeasy-testbed-petstore'
+  packageName: '@rogwilco/pet-store'
   responseFormat: flat
   templateVersion: v2
   useIndexModules: true

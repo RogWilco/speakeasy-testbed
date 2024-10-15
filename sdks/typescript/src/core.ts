@@ -10,4 +10,4 @@ import { ClientSDK } from "./lib/sdks.js";
  * application and passed around through some dependency injection mechanism  to
  * parts of an application that need to make SDK calls.
  */
-export class SpeakeasyTestbedPetstoreCore extends ClientSDK {}
+export class PetStoreCore extends ClientSDK {}

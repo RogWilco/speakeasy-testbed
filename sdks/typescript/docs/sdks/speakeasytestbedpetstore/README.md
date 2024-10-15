@@ -1,3 +1,0 @@
-# SpeakeasyTestbedPetstore SDK
-
-## Overview

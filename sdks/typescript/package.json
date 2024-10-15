@@ -1,5 +1,5 @@
 {
-  "name": "@rogwilco/speakeasy-testbed-petstore",
+  "name": "@rogwilco/pet-store",
   "version": "0.0.1",
   "author": "Speakeasy",
   "main": "./index.js",
