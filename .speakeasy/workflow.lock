@@ -1,27 +1,29 @@
-speakeasyVersion: 1.418.4
+speakeasyVersion: 1.419.0
 sources:
     PetStore-OAS:
         sourceNamespace: pet-store-oas
-        sourceRevisionDigest: sha256:e9e82c24ef41ccb23a7853bca1b8670f4a21b2c9b289b3dd4828e5e3787ce371
-        sourceBlobDigest: sha256:39553e4f051054755ccecf271a43f2e94aba86933d8a5e2ac489b9626059430a
+        sourceRevisionDigest: sha256:d13973cb7892ab5ba616c38a86654591031b5c0da4f183c6ca7e20f701a1ebcd
+        sourceBlobDigest: sha256:31af5af1aa30c6b4a2076a5adc9298146597faf6c57c076351de869676a6facf
         tags:
             - latest
+            - main
 targets:
     pet-store:
         source: PetStore-OAS
         sourceNamespace: pet-store-oas
-        sourceRevisionDigest: sha256:e9e82c24ef41ccb23a7853bca1b8670f4a21b2c9b289b3dd4828e5e3787ce371
-        sourceBlobDigest: sha256:39553e4f051054755ccecf271a43f2e94aba86933d8a5e2ac489b9626059430a
+        sourceRevisionDigest: sha256:d13973cb7892ab5ba616c38a86654591031b5c0da4f183c6ca7e20f701a1ebcd
+        sourceBlobDigest: sha256:31af5af1aa30c6b4a2076a5adc9298146597faf6c57c076351de869676a6facf
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
         PetStore-OAS:
             inputs:
-                - location: ../../openapi/petstore.yaml
+                - location: ./openapi/petstore.yaml
             registry:
                 location: registry.speakeasyapi.dev/speakeasy-self/nick-test/pet-store-oas
     targets:
         pet-store:
             target: typescript
             source: PetStore-OAS
+            output: ./sdks/typescript

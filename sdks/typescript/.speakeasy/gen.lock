@@ -3,10 +3,13 @@ id: 46bb18df-8b84-4b79-8c5b-4bd662d8d114
 management:
   docChecksum: 1bdb7a6f8bf3995d4b40475228403253
   docVersion: 1.0.0
-  speakeasyVersion: 1.418.4
+  speakeasyVersion: 1.419.0
   generationVersion: 2.438.3
-  releaseVersion: 0.0.1
-  configChecksum: 5703f95661fb68748b577586f8e546c2
+  releaseVersion: 0.0.2
+  configChecksum: ef7c6d99290f81d78c853bba0381b9f5
+  repoURL: https://github.com/RogWilco/speakeasy-testbed.git
+  repoSubDirectory: sdks/typescript
+  installationURL: https://gitpkg.now.sh/RogWilco/speakeasy-testbed/sdks/typescript
 features:
   typescript:
     additionalDependencies: 0.1.0
